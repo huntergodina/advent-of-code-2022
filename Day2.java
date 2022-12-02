@@ -12,16 +12,13 @@ class Scratch {
       RPS opp = RPS.valueOf(round[0]);
       RPS you;
       if(round[1].equals("X")){
-        you = opp.willBeat();
         oppScore += opp.points + 6;
-        yourScore += you.points;
+        yourScore += opp.willBeat().points;
       } else if (round[1].equals("Y")) {
-        you = opp;
-        yourScore += you.points + 3;
+        yourScore += opp.points + 3;
         oppScore += opp.points + 3;
       } else {
-        you = opp.beatBy();
-        yourScore += you.points + 6;
+        yourScore += opp.beatBy().points + 6;
         oppScore += opp.points;
       }
     }
