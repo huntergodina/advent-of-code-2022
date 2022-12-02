@@ -2,6 +2,8 @@ import java.io.IOException;
 import java.util.Arrays;
 
 class Scratch {
+  
+  private static final String input = "Puzzle Input Redacted";
 
   public static void main(String[] args) throws IOException {
     int yourScore = 0;
