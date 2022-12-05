@@ -4,15 +4,14 @@ function rangeToArray(range) {
     return range.split("-").map(str => Number(str));
 }
 
-function arrayContains([low, high]) {
+function overlapsWith([low, high]) {
     return this[0] <= high && low <= this[1]
 }
 
 const rangePairs = input.split("\n");
 
-Array.prototype.arrayContains = arrayContains;
+Array.prototype.overlapsWith = overlapsWith;
 
 console.log(rangePairs.map(pair => pair.split(",").map(rangeToArray)).filter(pair => {
-    console.log(pair, pair[0].arrayContains(pair[1]))
-    return pair[0].arrayContains(pair[1])
+    return pair[0].overlapsWith(pair[1])
 }).length)
